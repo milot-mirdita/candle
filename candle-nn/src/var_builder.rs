@@ -188,6 +188,12 @@ impl<'a, B: Backend> VarBuilderArgs<'a, B> {
     pub fn get<S: Into<Shape>>(&self, s: S, name: &str) -> Result<Tensor> {
         self.get_with_hints(s, name, Default::default())
     }
+
+    pub fn all_paths(&self) {
+        for s in self.path.clone().into_iter() {
+            println!("{:?}", s);
+        }
+    }
 }
 
 struct Zeros;

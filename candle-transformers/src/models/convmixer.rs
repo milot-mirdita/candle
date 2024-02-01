@@ -10,7 +10,7 @@ fn conv2d_same(
     vb: VarBuilder,
 ) -> Result<impl Module> {
     let conv2d = candle_nn::conv2d(i, o, k, c, vb)?;
-    let s = c.stride;
+    let s: usize = c.stride;
     let module = candle_nn::func(move |xs| {
         let ih = xs.dim(2)?;
         let iw = xs.dim(3)?;
