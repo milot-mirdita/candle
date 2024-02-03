@@ -651,7 +651,7 @@ impl T5EncoderModel {
         let shared_vb = if vb.contains_key("shared.weight") {
             vb.pp("shared")
         } else {
-            vb.pp("decoder").pp("embed_tokens")
+            vb.pp("encoder").pp("embed_tokens")
         };
         let shared = Embedding::new(cfg.vocab_size, cfg.d_model, shared_vb)?;
         let shared = Arc::new(shared);
