@@ -82,8 +82,3 @@ required-features = ["onnx"]
 name = "onnx_basics"
 required-features = ["onnx"]
 
-[profile.release]
-debug = true
-
-[build]
-rustflags = ["-C", "symbol-mangling-version=v0"]
