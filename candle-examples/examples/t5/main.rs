@@ -3,6 +3,10 @@ extern crate intel_mkl_src;
 
 #[cfg(feature = "accelerate")]
 extern crate accelerate_src;
+
+#[cfg(feature = "blas")]
+extern crate blas_src;
+
 use std::path::PathBuf;
 
 #[cfg(feature = "quantize")]
@@ -27,7 +31,7 @@ use std::fs::{File, OpenOptions};
 use std::io::{self, BufRead, Write, Read};
 use std::path::Path;
 
-const DTYPE: DType = DType::F16;
+const DTYPE: DType = DType::F32;
 
 #[derive(Parser, Debug, Clone)]
 #[command(author, version, about, long_about = None)]

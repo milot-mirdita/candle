@@ -57,6 +57,8 @@ pub mod layout;
 pub mod metal_backend;
 #[cfg(feature = "mkl")]
 mod mkl;
+#[cfg(feature = "blas")]
+mod blas;
 pub mod npy;
 mod op;
 pub mod pickle;
@@ -98,6 +100,9 @@ pub use dummy_metal_backend::{MetalDevice, MetalError, MetalStorage};
 
 #[cfg(feature = "mkl")]
 extern crate intel_mkl_src;
+
+#[cfg(feature = "blas")]
+extern crate blas_src;
 
 #[cfg(feature = "accelerate")]
 extern crate accelerate_src;

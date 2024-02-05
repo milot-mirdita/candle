@@ -43,6 +43,7 @@ clap = { version = "4.2.4", features = ["derive"] }
 criterion = { version = "0.5.1", default-features=false }
 cudarc = { version = "0.10.0", features = ["f16"] }
 gemm = { version = "0.17.0", features = ["wasm-simd128-enable"] }
+blas-src = { version = "0.9", features = ["openblas"] }
 hf-hub = "0.3.0"
 half = { version = "2.3.1", features = ["num-traits", "use-intrinsics", "rand_distr"] }
 image = { version = "0.24.7", default-features = false, features = ["jpeg", "png"] }

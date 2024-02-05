@@ -24,6 +24,7 @@ half = { workspace = true, optional = true }
 hf-hub = { workspace = true, features=["tokio"]}
 image = { workspace = true }
 intel-mkl-src = { workspace = true, optional = true }
+blas-src = { workspace = true, optional = true }
 num-traits = { workspace = true }
 pyo3 = { version = "0.20.0", features = ["auto-initialize"], optional = true }
 rayon = { workspace = true }
@@ -59,6 +60,7 @@ cuda = ["candle/cuda", "candle-nn/cuda", "candle-transformers/cuda", "dep:bindge
 cudnn = ["candle/cudnn"]
 flash-attn = ["cuda", "candle-transformers/flash-attn", "dep:candle-flash-attn"]
 mkl = ["dep:intel-mkl-src", "candle/mkl", "candle-nn/mkl", "candle-transformers/mkl"]
+blas = ["dep:blas-src", "candle/blas"]
 nccl = ["cuda", "cudarc/nccl", "dep:half"]
 onnx = ["candle-onnx"]
 metal = ["candle/metal", "candle-nn/metal"]
